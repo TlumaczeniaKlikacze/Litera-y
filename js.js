@@ -149,8 +149,10 @@ document.getElementById('backToOriginal').addEventListener('click',()=>{
     }
   
     let readyText = text.split('>\n').join('>').split('\n<').join('<')
+    document.getElementById('textOriginal').value = ''
     document.getElementById('inputOriginal').value = readyText
     document.getElementById('inputOriginal').select()
+
     document.execCommand('copy')
 })
 
@@ -239,9 +241,10 @@ document.getElementById('changeForDeepl').addEventListener('click',()=>{
             ready_text = ready_text.replace(new RegExp(`${db[_].original}`,'g'),`\n${db[_].for_deepl}\n`)
         }
     }
+    document.getElementById('textDeepl').value = ''
+
     document.getElementById('inputDeepl').value = ready_text
     document.getElementById('inputDeepl').select()
- 
     document.execCommand('copy')
 
 })
